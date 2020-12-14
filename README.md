@@ -1,4 +1,4 @@
-# dsa_Daily_Dose
+# dsa_daily_dose
 
 ## About
 ---
