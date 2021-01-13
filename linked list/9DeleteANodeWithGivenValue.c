@@ -13,7 +13,7 @@ void traversal(struct Node *ptr ){
     while (ptr != NULL){
         printf("Element = %d\n", ptr->data);
         ptr = ptr ->next;
-    }   
+    } 
 }
 struct Node* deleteNode(struct Node *head, int temp){  
     // ptr is the ahead iterator of q 
@@ -21,14 +21,21 @@ struct Node* deleteNode(struct Node *head, int temp){
     struct Node * ptr =q ->next;
 
     // traversing along the linked list and finding the location of the value
-    while(ptr ->data != temp){
+    while((ptr ->data != temp) && (ptr ->next != NULL)){
         q = q->next;
         ptr = ptr ->next;
     }
-    // deleting the node by bypassing the link
-    q->next = ptr->next;
-    free(ptr);
-    return head;  
+
+    // Adding if condition because we want to check if we don't find that element in the linked list and the traversal reaches to the last node
+    if(ptr->data == temp){
+        // deleting the node by bypassing the link
+        q->next = ptr->next;
+        free(ptr);        
+    }
+    else{
+        printf("\nThe data element you entered doesn't exist in this linked list \n");
+    } 
+    return head;    
 }
 
 int main(int argc, char const *argv[]){
@@ -89,5 +96,24 @@ You want to dlt node having data element =
 After deletion of a node the linked list looks like :
 Element = 7
 Element = 8
+Element = 66
+*/
+/*------------output2---------------------
+The linked list looks like : 
+Element = 7
+Element = 8
+Element = 11
+Element = 66
+You want to dlt node having data element =
+31
+
+31
+
+The data element you entered doesn't exist in this linked list
+
+After deletion of a node the linked list looks like :
+Element = 7
+Element = 8
+Element = 11
 Element = 66
 */
