@@ -37,7 +37,8 @@ int push( struct stack *ptr, int val){
     else{
         ptr->top++;
         ptr->arr[ptr->top] = val;       
-    } 
+    }
+    return 0; 
 }
 
 int main(int argc, char const *argv[]){
@@ -48,6 +49,7 @@ int main(int argc, char const *argv[]){
     sp->arr = (int *) malloc(sp->size * sizeof(int));
     printf("Stack has been created successfully.\n\n");
     printf("Before pushing : %d\n",isFull(sp));
+    printf("Before pushing value of top : %d\n",sp->top);
 
     // Pushing first element 
     push(sp, 10);
@@ -74,6 +76,8 @@ int main(int argc, char const *argv[]){
     push(sp, 543);    // here the stack became overflow
 
     printf("After pushing : %d\n",isFull(sp));
+    printf("After pushing value of top : %d\n",sp->top);
+    // where top=9 is the maximum
     
     return 0;
 }
