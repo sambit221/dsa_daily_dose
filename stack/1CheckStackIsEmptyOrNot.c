@@ -31,7 +31,7 @@ int isFull( struct stack *ptr){
 
 int main(int argc, char const *argv[]){
     // *s means struct pointers so that we can directly point its elements
-    struct stack *s;
+    struct stack *s = (struct stack *) malloc(sizeof(struct stack));
     // max no of nodes can be added is 80
     s -> size = 80;
     // initial value of top is -1 as it is empty
@@ -55,8 +55,10 @@ int main(int argc, char const *argv[]){
     }
     else{
         printf("The stack is not empty.\n");
-    }
-    
-    
+    } 
     return 0;
 }
+
+/*------------------output----------------
+The stack is not empty.
+*/

@@ -1,4 +1,4 @@
-// WAP to push elements into the stack and check stack overflow condition
+// WAP to pop elements into the stack and check stack underflow condition
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -28,7 +28,7 @@ int isFull( struct stack *ptr){
     }
 }
 
-// function to push an element into stack
+// function to pop an element into stack
 int pop( struct stack *ptr){
     if (isEmpty(ptr)){
         printf("Stack underflow! Can't pop from the stack.\n");
@@ -43,7 +43,7 @@ int pop( struct stack *ptr){
 
 int main(int argc, char const *argv[]){
     // *s means struct pointers so that we can directly point its elements
-    struct stack *sp;
+    struct stack *sp = (struct stack *) malloc(sizeof(struct stack));
     sp -> size = 10;
     sp -> top = -1;
     sp->arr = (int *) malloc(sp->size * sizeof(int));
@@ -68,3 +68,13 @@ int main(int argc, char const *argv[]){
     
     return 0;
 }
+
+/*
+-------------------output---------------------
+Stack has been created successfully.
+
+Before pushing (empty stack) : 0
+Before popping the value of top in the stack is 2
+After popping the element 31
+After popping the value of top in the stack is 1
+*/

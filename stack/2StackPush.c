@@ -43,7 +43,7 @@ int push( struct stack *ptr, int val){
 
 int main(int argc, char const *argv[]){
     // *s means struct pointers so that we can directly point its elements
-    struct stack *sp;
+    struct stack *sp = (struct stack *) malloc(sizeof(struct stack));
     sp -> size = 10;
     sp -> top = -1;
     sp->arr = (int *) malloc(sp->size * sizeof(int));
@@ -81,3 +81,13 @@ int main(int argc, char const *argv[]){
     
     return 0;
 }
+
+/*------------------output----------------
+Stack has been created successfully.
+
+Before pushing : 0
+Before pushing value of top : -1
+Stack overflow! Can't push 543 into the stack.
+After pushing : 1
+After pushing value of top : 9
+*/
