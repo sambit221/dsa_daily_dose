@@ -1,8 +1,10 @@
-/* We have an array of zeros of size n. We will have some queries(tasks) i.e, represented as q. In each query we will have 2 position markers l,r. (l is the starting index and r is the last index). WAP to increase all values in between [l,r] by 1.
-
+/*
+(Q)- We have an array of zeros of size n. We will have some queries(tasks) i.e, represented as q. In each query we will have 2 position markers l,r. (l is the starting index and r is the last index). WAP to increase all values in between [l,r] by 1.
 Constraints:- n<=10'7
              q<=10'3
+
 */
+
 // due to this huge constraints we cant use normal brutal force method. 
 // usually we were getting querry, solving it, agn got querry agn solve it... but it takes a lot of time
 // here we will first solve all the queries then mark required position then at the end increment that position by cumulative sum method.
@@ -22,6 +24,7 @@ int main(int argc, char const *argv[]){
     int q; // queries
     cin>>q;
     while (q--){
+        // complexity- O(q)
         int l, r; // position marker
         cin>>l>>r;
         arr[l]++;
@@ -30,13 +33,14 @@ int main(int argc, char const *argv[]){
         }
     }
     // cumulative sum
-    for (int i = 1; i <n; i++)
-    {
+    for (int i = 1; i <n; i++){
+    // complexity- O(n)
         arr[i] += arr[i-1];
     }
+
     // printing array
-    for (int i = 0; i <n; i++)
-    {
+    for (int i = 0; i <n; i++){
+        // complexity- O(n)
         cout<<arr[i]<<" ";
     }   
     return 0;
