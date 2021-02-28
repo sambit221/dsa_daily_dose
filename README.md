@@ -2,8 +2,8 @@
 
 ## About
 ---
-This Repository will serve as a Hand-Book for <b>DSA and Competitive-Coding</b> .
-It includes Description, Implementation, Analysis, Questions along with answers of mostly used Data-Structures and Algorithms.
+This Repository will serve as a Hand-Book for <b>DSA practice and Competitive-Coding</b> .
+It includes Description, Implementation, Analysis, Questions along with solutions of mostly used Data-Structures and Algorithms.
 Hope this Repository serves it's purpose well.
 
 Happy Learning :)
