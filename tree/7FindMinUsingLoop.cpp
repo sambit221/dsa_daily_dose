@@ -1,4 +1,4 @@
-// Wap to find the minimum element in a binary search tree.
+// Wap to find the minimum(using loop) element in a binary search tree.
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -41,6 +41,11 @@ struct Node *insert(struct Node *root, int data){
 
 //function to find the min element
 int findMin(struct Node *root){
+	if(root==NULL){
+		cout<<"Tree is empty"<<endl;
+		return -1;
+	}
+	
 	struct Node *current = root; // current is the traversing node
 	while(current->left !=NULL){
 		current=current->left;  // if left node is not empty then traversing node = left node
