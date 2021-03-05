@@ -18,6 +18,8 @@ struct Node * createNode(int data){
     n -> right = NULL; // setting right node to be NULL
     return n; // returning the created node
 }
+
+// to find the max
 int max(int a, int b){
     if(a>b)
         return a;

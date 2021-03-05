@@ -45,7 +45,6 @@ int findMin(struct Node *root){
 		printf("Tree is empty\n");
 		return -1;
 	}
-	
 	struct Node *current = root; // current is the traversing node
 	while(current->left !=NULL){
 		current=current->left;  // if left node is not empty then traversing node = left node
