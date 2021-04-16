@@ -1,3 +1,5 @@
+// Wap to find multiple missing elements in a sorted array
+
 #include<stdio.h>
 int main(int argc, char const *argv[]){
     int arr[]={6,7,8,9,10,12,13,14,16,17,18,19,21,22,23};
@@ -12,3 +14,8 @@ int main(int argc, char const *argv[]){
     }   
     return 0;
 }
+/* ---------output-----------
+Missing element is 11
+Missing element is 15
+Missing element is 20
+*/
