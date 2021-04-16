@@ -1,4 +1,4 @@
-// Wap to find multiple missing elements in a sorted array
+// Wap to find duplicate elements in an unsorted array
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -6,7 +6,7 @@ int main(int argc, char const *argv[]){
     int n=10, count=0, arr[]={8,3,6,4,6,5,6,8,2,7};
     for (int i = 0; i < n-1; i++){
         count=1;
-        for (int j = i+1; j < n; j++){
+        for (int j = i+1; j < n; j++){ 
             if (arr[i]==arr[j]){
                 count++;
                 arr[j]=-1;
