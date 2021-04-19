@@ -1,4 +1,4 @@
-// WAP to convert an 2d array to diagonal matrix
+// WAP to convert a 1d array to diagonal matrix
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -6,17 +6,15 @@ int main(int argc, char const *argv[]){
     int n;
     cout<<"Dimension of the matrix is : "<<endl;
     cin>>n;
-    int a[n][n];
-    for (int i = 0; i < n; i++){
-        for (int j = 0; j < n; j++){
-            cin>>a[i][j];
+    int a[n][n],b[n];
+    for (int j = 0; j < n; j++){
+            cin>>b[j];
         }
-    }
     cout<<" Diagonal matrix:"<<endl;
     for (int i = 0; i < n; i++){
         for (int j = 0; j < n; j++){
             if(i==j)
-                cout<<" "<<a[i][j]<<" ";
+                cout<<" "<<b[j]<<" ";
             else
                 cout<<" 0 ";
         }
@@ -26,10 +24,11 @@ int main(int argc, char const *argv[]){
 }
 /*-----------output-----------------
 Dimension of the matrix is : 
-3
-1 2 3 4 5 6 7 8 9
+4
+1 2 3 4
  Diagonal matrix:
- 1  0  0         
- 0  5  0
- 0  0  9
+ 1  0  0  0
+ 0  2  0  0
+ 0  0  3  0
+ 0  0  0  4
 */
