@@ -1,36 +1,74 @@
-// C++ program to implement recursive Binary Search
-#include <bits/stdc++.h>
-using namespace std;
+/*
+Problem: Search data using Binary Search
+Binary Search: It is a way to search data in efficient time.It
+works by repeatedly dividing in half the portion of the
+list that could contain the item, until you have narrowed down
+the possible locations to just one.
+*/
 
-// A recursive binary search function. It returns location of x in given array arr[l..r] is present,otherwise -1
-int binarySearch(int arr[], int l, int r, int x)
+#include <stdio.h>
+#include <stdlib.h>
+
+//Function to search data using binary search
+int binary_search(int *arr,int size,int to_search)
 {
-    if (r >= l) {
-        int mid = l + (r - l) / 2;
-
-        // If the element is present at the middle itself
-        if (arr[mid] == x)
+    //initialize start as 0 and end as size-1
+    int start=0,end=size-1,mid;
+    //until start is less than or equal to end run the loop
+    while(start<=end)
+    {
+       //every time assign (start+end)/2(middle element of the current array) in mid
+       mid=(start+end)/2;
+       // if the data found in middle of the array then return the index
+       if(arr[mid]==to_search)
             return mid;
-
-        // If element is smaller than mid, then it can only be present in left subarray
-        if (arr[mid] > x)
-            return binarySearch(arr, l, mid - 1, x);
-
-        // Else the element can only be present in right subarray
-        return binarySearch(arr, mid + 1, r, x);
+        /* if the middle index value of array is greater than to search
+         the data to search is less than middle element of current element so end should be
+         assign less than middle means mid-1 */
+        else if(arr[mid]>to_search)
+            end=mid-1;
+        /* if else condition runs that means the data is greater than the middle element of
+        current array so the start variable should have mid+1 index number */
+        else
+            start=mid+1;
     }
-
-    // We reach here when element is not present in array 
+    // if the data not found till the loop run that means data is not present in given array
     return -1;
 }
-
-int main(void)
+//driver code
+int main()
 {
-    int arr[] = { 2, 3, 4, 10, 40 };
-    int x = 10;
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int result = binarySearch(arr, 0, n - 1, x);
-    (result == -1) ? cout << "Element is not present in array"
-                   : cout << "Element is present at index " << result;
+    int size,*arr,i,to_search,result;
+    printf("Enter size: ");
+    //taking size
+    scanf("%d",&size);
+    //dynamically allocating memory and assigning the base address in arr
+    arr=(int*)malloc(sizeof(int)*size);
+    for(i=0;i<size;i++)
+    scanf("%d",&arr[i]);
+    printf("Enter a number to search: ");
+    //taking the data to search
+    scanf("%d",&to_search);
+    // calling binary_search to find the element index or -1 if not present and assign it to result
+    result=binary_search(arr,size,to_search);
+    if(result==-1)
+        printf("Data Not Found");
+    else
+        printf("Data Found at index no: %d",result);
     return 0;
 }
+/*
+Case 1:
+Input: Enter size: 5
+       1  2   3   4   5
+       Enter a number to search: -1
+Output: Data Not Found
+
+Case 2:
+Input: Enter size: 5
+       2  5   9   110   112
+       Enter a number to search: 110
+Output: Data Found at index no: 3
+
+Time complexity: O(log N) where N is the size of array
+*/
