@@ -1,3 +1,5 @@
+//Convert a sentence into its equivalent mobile numeric keypad sequence
+
 #include<bits/stdc++.h>
 using namespace std;
 int main(int argc, char const *argv[]){
@@ -19,3 +21,8 @@ int main(int argc, char const *argv[]){
     cout<<op;
     return 0;
 }
+
+/*
+Input : GEEKSFORGEEKS 
+Output: 4333355777733366677743333557777
+*/
